@@ -31,3 +31,37 @@ E:\Hosting Space\app.queentouchtech.in\bizzUI\bizzUIAPI\Bizzui.api\obj\Debug\net
 E:\Hosting Space\app.queentouchtech.in\bizzUI\bizzUIAPI\Bizzui.api\obj\Debug\net7.0\Bizzui.Api.pdb
 E:\Hosting Space\app.queentouchtech.in\bizzUI\bizzUIAPI\Bizzui.api\obj\Debug\net7.0\Bizzui.Api.genruntimeconfig.cache
 E:\Hosting Space\app.queentouchtech.in\bizzUI\bizzUIAPI\Bizzui.api\obj\Debug\net7.0\ref\Bizzui.Api.dll
+c:\QT\bizzui_Api\Bizzui.Api\bin\Debug\net7.0\appsettings.Development.json
+c:\QT\bizzui_Api\Bizzui.Api\bin\Debug\net7.0\appsettings.json
+c:\QT\bizzui_Api\Bizzui.Api\bin\Debug\net7.0\Bizzui.Api.exe
+c:\QT\bizzui_Api\Bizzui.Api\bin\Debug\net7.0\Bizzui.Api.deps.json
+c:\QT\bizzui_Api\Bizzui.Api\bin\Debug\net7.0\Bizzui.Api.runtimeconfig.json
+c:\QT\bizzui_Api\Bizzui.Api\bin\Debug\net7.0\Bizzui.Api.dll
+c:\QT\bizzui_Api\Bizzui.Api\bin\Debug\net7.0\Bizzui.Api.pdb
+c:\QT\bizzui_Api\Bizzui.Api\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+c:\QT\bizzui_Api\Bizzui.Api\bin\Debug\net7.0\Microsoft.OpenApi.dll
+c:\QT\bizzui_Api\Bizzui.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+c:\QT\bizzui_Api\Bizzui.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+c:\QT\bizzui_Api\Bizzui.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\Bizzui.Api.csproj.AssemblyReference.cache
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\Bizzui.Api.GeneratedMSBuildEditorConfig.editorconfig
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\Bizzui.Api.AssemblyInfoInputs.cache
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\Bizzui.Api.AssemblyInfo.cs
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\Bizzui.Api.csproj.CoreCompileInputs.cache
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\Bizzui.Api.MvcApplicationPartsAssemblyInfo.cs
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\Bizzui.Api.MvcApplicationPartsAssemblyInfo.cache
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\Bizzui.Api.sourcelink.json
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\staticwebassets.build.json
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\staticwebassets.development.json
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\staticwebassets\msbuild.Bizzui.Api.Microsoft.AspNetCore.StaticWebAssets.props
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\staticwebassets\msbuild.build.Bizzui.Api.props
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Bizzui.Api.props
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Bizzui.Api.props
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\staticwebassets.pack.json
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\scopedcss\bundle\Bizzui.Api.styles.css
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\Bizzui.Api.csproj.CopyComplete
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\Bizzui.Api.dll
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\refint\Bizzui.Api.dll
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\Bizzui.Api.pdb
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\Bizzui.Api.genruntimeconfig.cache
+c:\QT\bizzui_Api\Bizzui.Api\obj\Debug\net7.0\ref\Bizzui.Api.dll
