@@ -1,0 +1,25 @@
+dotnet new sln --name bizzui_api_setup
+
+---------------------
+The template "Solution File" was created successfully.
+
+dotnet new webapi --name Bizzui.Api
+--------------------
+The template "ASP.NET Core Web API" was created successfully.
+
+dotnet sln add .\Bizzui.Api\Bizzui.Api.csproj
+-----------------------------------------------
+Project `Bizzui.Api\Bizzui.Api.csproj` added to the solution.
+
+
+Move the terminal into the project directory using the command 
+
+cd Bizzui.API
+
+Run the command 
+
+dotnet build
+
+Once successfully run the command, 
+
+dotnet run
