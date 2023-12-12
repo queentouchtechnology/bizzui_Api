@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G2xxKe3v/9HNHkWzKepC3y0VhSsIN4Qoic5Pmf+rckdc3urF3wzqeMyWaRpcY6qy9x086v2nW1v1+pf5knPYwg==",
+  "dgSpecHash": "9I5eh1eKI74TBOoeXbo4YTt0wJWZ+7nK0IVkpdWUJZmJfSwjBwY4L1xeemWpYA+dXIuckczHTD+EuUMYX1NYUw==",
   "success": true,
-  "projectFilePath": "E:\\Hosting Space\\app.queentouchtech.in\\bizzUI\\bizzUIAPI\\Bizzui.api\\Bizzui.Api.csproj",
+  "projectFilePath": "E:\\Hosting Space\\app.queentouchtech.in\\bizzUI\\bizzUIAPI\\Bizzui.Api\\Bizzui.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gayat\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
     "C:\\Users\\gayat\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Hosting Space\\app.queentouchtech.in\\bizzUI\\bizzUIAPI\\Bizzui.api\\Bizzui.Api.csproj": {}
+    "E:\\Hosting Space\\app.queentouchtech.in\\bizzUI\\bizzUIAPI\\Bizzui.Api\\Bizzui.Api.csproj": {}
   },
   "projects": {
-    "E:\\Hosting Space\\app.queentouchtech.in\\bizzUI\\bizzUIAPI\\Bizzui.api\\Bizzui.Api.csproj": {
+    "E:\\Hosting Space\\app.queentouchtech.in\\bizzUI\\bizzUIAPI\\Bizzui.Api\\Bizzui.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Hosting Space\\app.queentouchtech.in\\bizzUI\\bizzUIAPI\\Bizzui.api\\Bizzui.Api.csproj",
+        "projectUniqueName": "E:\\Hosting Space\\app.queentouchtech.in\\bizzUI\\bizzUIAPI\\Bizzui.Api\\Bizzui.Api.csproj",
         "projectName": "Bizzui.Api",
-        "projectPath": "E:\\Hosting Space\\app.queentouchtech.in\\bizzUI\\bizzUIAPI\\Bizzui.api\\Bizzui.Api.csproj",
+        "projectPath": "E:\\Hosting Space\\app.queentouchtech.in\\bizzUI\\bizzUIAPI\\Bizzui.Api\\Bizzui.Api.csproj",
         "packagesPath": "C:\\Users\\gayat\\.nuget\\packages\\",
-        "outputPath": "E:\\Hosting Space\\app.queentouchtech.in\\bizzUI\\bizzUIAPI\\Bizzui.api\\obj\\",
+        "outputPath": "E:\\Hosting Space\\app.queentouchtech.in\\bizzUI\\bizzUIAPI\\Bizzui.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gayat\\AppData\\Roaming\\NuGet\\NuGet.Config",
