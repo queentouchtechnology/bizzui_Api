@@ -9,6 +9,8 @@ public class TodoController : ControllerBase
     {
         new TodoItem { Id = 1, Name = "Learn .NET Core", IsComplete = false },
         new TodoItem { Id = 2, Name = "Build a Web API", IsComplete = false }
+         new TodoItem { Id = 3, Name = "Learn .NET Core", IsComplete = false },
+        new TodoItem { Id = 4, Name = "Build a Web API", IsComplete = false }
     };
 
     [HttpGet]
