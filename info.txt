@@ -23,3 +23,13 @@ dotnet build
 Once successfully run the command, 
 
 dotnet run
+
+dotnet dev-certs https --trust
+dotnet run --launch-profile https
+open in chrome
+https://localhost:7199/index.html 
+
+c:\QT\bizzui_Api>dotnet run --project Bizzui.Api
+c:\QT\bizzui_Api>dotnet run --project Bizzui.Api --launch-profile http
+
+dotnet new webapi --use-controllers -o TodoApi
