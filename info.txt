@@ -31,5 +31,21 @@ https://localhost:7199/index.html
 
 c:\QT\bizzui_Api>dotnet run --project Bizzui.Api
 c:\QT\bizzui_Api>dotnet run --project Bizzui.Api --launch-profile http
+or go to project folder and run
+c:\QT\bizzui_Api\Bizzui.Api>dotnet build
+c:\QT\bizzui_Api\Bizzui.Api>dotnet run
+
 
 dotnet new webapi --use-controllers -o TodoApi
+
+ref: https://github.com/leefordjudes/sohatnotebook/blob/master/commands.txt
+Ref: https://learn.microsoft.com/en-us/ef/core/get-started/overview/install
+c:\QT\bizzui_Api>dotnet tool install --global dotnet-ef
+c:\QT\bizzui_Api>cd Bizzui.Api
+
+c:\QT\bizzui_Api\Bizzui.Api>dotnet add package Microsoft.EntityFrameworkCore.Design
+c:\QT\bizzui_Api\Bizzui.Api>dotnet add package Microsoft.EntityFrameworkCore.Tools
+c:\QT\bizzui_Api\Bizzui.Api>dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+For controller add
+ref: https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-8.0&tabs=visual-studio-code
