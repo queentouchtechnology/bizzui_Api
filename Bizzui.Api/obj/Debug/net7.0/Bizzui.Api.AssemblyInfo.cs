@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bizzui.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3943d15d831ce5669ce2b42425a802463bb2a103")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bizzui.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bizzui.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

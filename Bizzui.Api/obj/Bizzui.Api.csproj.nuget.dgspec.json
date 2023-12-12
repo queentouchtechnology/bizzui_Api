@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\QT\\bizzui_Api\\Bizzui.Api\\Bizzui.Api.csproj": {}
+    "C:\\qt\\bizzui_Api\\Bizzui.Api\\Bizzui.Api.csproj": {}
   },
   "projects": {
-    "c:\\QT\\bizzui_Api\\Bizzui.Api\\Bizzui.Api.csproj": {
+    "C:\\qt\\bizzui_Api\\Bizzui.Api\\Bizzui.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\QT\\bizzui_Api\\Bizzui.Api\\Bizzui.Api.csproj",
+        "projectUniqueName": "C:\\qt\\bizzui_Api\\Bizzui.Api\\Bizzui.Api.csproj",
         "projectName": "Bizzui.Api",
-        "projectPath": "c:\\QT\\bizzui_Api\\Bizzui.Api\\Bizzui.Api.csproj",
+        "projectPath": "C:\\qt\\bizzui_Api\\Bizzui.Api\\Bizzui.Api.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "c:\\QT\\bizzui_Api\\Bizzui.Api\\obj\\",
+        "outputPath": "C:\\qt\\bizzui_Api\\Bizzui.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"

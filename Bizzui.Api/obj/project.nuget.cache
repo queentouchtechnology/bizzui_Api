@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V7sKsk0cxJVWCrbFdXxLqA3z/pHJX5rIsM+FAcw4mNEWXAroELiON+5GIDxUDXy9/8ESaUS5YQ2oHWtGmgVhVg==",
+  "dgSpecHash": "PHlxTtoyetg6frniSfR7ZaEEgz+rAIYV/EKh2NSoEGnzS6KtyXWhBBL9re2whl5674XEaHWuA5Q8RbgROwARxA==",
   "success": true,
-  "projectFilePath": "c:\\QT\\bizzui_Api\\Bizzui.Api\\Bizzui.Api.csproj",
+  "projectFilePath": "C:\\qt\\bizzui_Api\\Bizzui.Api\\Bizzui.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
