@@ -43,9 +43,36 @@ Ref: https://learn.microsoft.com/en-us/ef/core/get-started/overview/install
 c:\QT\bizzui_Api>dotnet tool install --global dotnet-ef
 c:\QT\bizzui_Api>cd Bizzui.Api
 
+dotnet add package <package name>
+dotnet remove package <package name>
+Get package info from https://www.nuget.org/packages/
+
+this will install latest package
 c:\QT\bizzui_Api\Bizzui.Api>dotnet add package Microsoft.EntityFrameworkCore.Design
 c:\QT\bizzui_Api\Bizzui.Api>dotnet add package Microsoft.EntityFrameworkCore.Tools
 c:\QT\bizzui_Api\Bizzui.Api>dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 
+The above wont install bcose we are using .net 7, but the latest, so we need to specify version
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 7.0.11
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 7.0.14
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 7.0.14
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 7.0.14
+
+dotnet add package Swashbuckle.AspNetCore --version 6.5.0
+
 For controller add
-ref: https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-8.0&tabs=visual-studio-code
+ref: 
+https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-8.0&tabs=visual-studio-code
+https://learn.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-8.0
+
+For Code Generation
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design //only supports above .net 8
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet tool uninstall -g dotnet-aspnet-codegenerator
+dotnet tool install -g dotnet-aspnet-codegenerator  // installs current version 8.0.0
+dotnet tool update -g dotnet-aspnet-codegenerator
+
+dotnet tool install --global dotnet-aspnet-codegenerator --version 7.0.11
+
+dotnet aspnet-codegenerator controller -name TodoItemsController -async -api -m TodoItem -dc TodoContext -outDir Controllers

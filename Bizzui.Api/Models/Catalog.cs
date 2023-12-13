@@ -13,6 +13,4 @@ public class Catalog
     public required bool Active {get;set;} = true;
     public DateTime CreatedAt {get;set;} = DateTime.Now;
     public DateTime UpdatedAt {get;set;} = DateTime.Now;
-
-
 }
