@@ -34,6 +34,7 @@ c:\QT\bizzui_Api>dotnet run --project Bizzui.Api --launch-profile http
 or go to project folder and run
 c:\QT\bizzui_Api\Bizzui.Api>dotnet build
 c:\QT\bizzui_Api\Bizzui.Api>dotnet run
+c:\QT\bizzui_Api\Bizzui.Api>dotnet watch run
 
 
 dotnet new webapi --use-controllers -o TodoApi
@@ -59,6 +60,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Tools --version 7.0.14
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 7.0.14
 
 dotnet add package Swashbuckle.AspNetCore --version 6.5.0
+dotnet add package Swashbuckle.AspNetCore.SwaggerGen --version 6.5.0
 
 For controller add
 ref: 
@@ -76,3 +78,11 @@ dotnet tool update -g dotnet-aspnet-codegenerator
 dotnet tool install --global dotnet-aspnet-codegenerator --version 7.0.11
 
 dotnet aspnet-codegenerator controller -name TodoItemsController -async -api -m TodoItem -dc TodoContext -outDir Controllers
+
+c:\QT\bizzui_Api\Bizzui.Api>dotnet aspnet-codegenerator controller -name CatalogController -async -api -m Catalog -dc AppDbContext -outDir Controllers
+
+c:\QT\bizzui_Api\Bizzui.Api>dotnet ef migrations add "AddCatalogTable"
+Build started...
+Build succeeded.
+Done. To undo this action, use 'ef migrations remove'
+c:\QT\bizzui_Api\Bizzui.Api>dotnet ef database update
