@@ -1,14 +1,20 @@
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using BizzuiApi.Models;
+using BizzuiApi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-
+ // Enable CORS
+builder.Services.AddCors(options =>
+    {
+        //WithMethods("GET","POST","PUT","DELETE")
+        options.AddPolicy("AllowAll", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+    });
 // Add services to the container.
-
 builder.Services.AddControllers();
-// builder.Services.AddDbContext<CatalogContext>(opt =>
-//     opt.UseInMemoryDatabase("TodoList"));
+// var ConectionName = builder.Configuration.GetSection("ConnectionName").Value;
+builder.Services.AddDbContext<AppDbContext>(opt =>
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("TestDB")));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -41,14 +47,16 @@ if (app.Environment.IsDevelopment())
 {
     options.SerializeAsV2 = true;
 });
+
     app.UseSwaggerUI(options =>
 {
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
     options.DefaultModelsExpandDepth(-1);
-    options.RoutePrefix = string.Empty;
+    options.RoutePrefix = "swagger";
 });
 }
 
+app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
