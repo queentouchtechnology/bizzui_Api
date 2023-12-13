@@ -1,21 +1,62 @@
+using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
+using BizzuiApi.Models;
+using BizzuiApi.Data;
+
 var builder = WebApplication.CreateBuilder(args);
-
+ // Enable CORS
+builder.Services.AddCors(options =>
+    {
+        //WithMethods("GET","POST","PUT","DELETE")
+        options.AddPolicy("AllowAll", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+    });
 // Add services to the container.
-
 builder.Services.AddControllers();
+// var ConectionName = builder.Configuration.GetSection("ConnectionName").Value;
+builder.Services.AddDbContext<AppDbContext>(opt =>
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("TestDB")));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "Bizzui API",
+        Description = "An ASP.NET Core Web API for managing Bizzui",
+        TermsOfService = new Uri("https://bizzui.com/terms"),
+        Contact = new OpenApiContact
+        {
+            Name = "Queentouch Technology",
+            Url = new Uri("https://queentouchtechnology.com/contact")
+        },
+        License = new OpenApiLicense
+        {
+            Name = "License",
+            Url = new Uri("https://queentouchtechnology.com/license")
+        }
+    });
+});
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwagger(options =>
+{
+    options.SerializeAsV2 = true;
+});
+
+    app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+    options.DefaultModelsExpandDepth(-1);
+    options.RoutePrefix = "swagger";
+});
 }
 
+app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

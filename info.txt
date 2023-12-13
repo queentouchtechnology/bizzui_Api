@@ -23,3 +23,66 @@ dotnet build
 Once successfully run the command, 
 
 dotnet run
+
+dotnet dev-certs https --trust
+dotnet run --launch-profile https
+open in chrome
+https://localhost:7199/index.html 
+
+c:\QT\bizzui_Api>dotnet run --project Bizzui.Api
+c:\QT\bizzui_Api>dotnet run --project Bizzui.Api --launch-profile http
+or go to project folder and run
+c:\QT\bizzui_Api\Bizzui.Api>dotnet build
+c:\QT\bizzui_Api\Bizzui.Api>dotnet run
+c:\QT\bizzui_Api\Bizzui.Api>dotnet watch run
+
+
+dotnet new webapi --use-controllers -o TodoApi
+
+ref: https://github.com/leefordjudes/sohatnotebook/blob/master/commands.txt
+Ref: https://learn.microsoft.com/en-us/ef/core/get-started/overview/install
+c:\QT\bizzui_Api>dotnet tool install --global dotnet-ef
+c:\QT\bizzui_Api>cd Bizzui.Api
+
+dotnet add package <package name>
+dotnet remove package <package name>
+Get package info from https://www.nuget.org/packages/
+
+this will install latest package
+c:\QT\bizzui_Api\Bizzui.Api>dotnet add package Microsoft.EntityFrameworkCore.Design
+c:\QT\bizzui_Api\Bizzui.Api>dotnet add package Microsoft.EntityFrameworkCore.Tools
+c:\QT\bizzui_Api\Bizzui.Api>dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+The above wont install bcose we are using .net 7, but the latest, so we need to specify version
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 7.0.11
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 7.0.14
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 7.0.14
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 7.0.14
+
+dotnet add package Swashbuckle.AspNetCore --version 6.5.0
+dotnet add package Swashbuckle.AspNetCore.SwaggerGen --version 6.5.0
+
+For controller add
+ref: 
+https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-8.0&tabs=visual-studio-code
+https://learn.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-8.0
+
+For Code Generation
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design //only supports above .net 8
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet tool uninstall -g dotnet-aspnet-codegenerator
+dotnet tool install -g dotnet-aspnet-codegenerator  // installs current version 8.0.0
+dotnet tool update -g dotnet-aspnet-codegenerator
+
+dotnet tool install --global dotnet-aspnet-codegenerator --version 7.0.11
+
+dotnet aspnet-codegenerator controller -name TodoItemsController -async -api -m TodoItem -dc TodoContext -outDir Controllers
+
+c:\QT\bizzui_Api\Bizzui.Api>dotnet aspnet-codegenerator controller -name CatalogController -async -api -m Catalog -dc AppDbContext -outDir Controllers
+
+c:\QT\bizzui_Api\Bizzui.Api>dotnet ef migrations add "AddCatalogTable"
+Build started...
+Build succeeded.
+Done. To undo this action, use 'ef migrations remove'
+c:\QT\bizzui_Api\Bizzui.Api>dotnet ef database update
