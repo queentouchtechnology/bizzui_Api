@@ -8,13 +8,31 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
     {
         //WithMethods("GET","POST","PUT","DELETE")
-        options.AddPolicy("AllowAll", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+        options.AddPolicy("AllowAll", policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
     });
 // Add services to the container.
 builder.Services.AddControllers();
-// var ConectionName = builder.Configuration.GetSection("ConnectionName").Value;
+var ConnectionName = "TestDB";
+Console.WriteLine("Environment: {0}", builder.Environment.EnvironmentName);
+ConnectionName = builder.Configuration.GetSection("ConnectionName").Value;
+Console.WriteLine("Database: "+ ConnectionName);
+/*
+if (builder.Environment.IsDevelopment()) {
+    ConnectionName = builder.Configuration.GetSection("ConnectionName").Value;
+    Console.WriteLine("Env: Development");
+    Console.WriteLine("Con: "+ ConnectionName);
+} else if (builder.Environment.IsProduction()) {
+    ConnectionName = builder.Configuration.GetSection("ConnectionName").Value;
+    Console.WriteLine("Env: Production");
+    Console.WriteLine("Con: {0}", ConnectionName);
+}
+*/
+#pragma warning disable CS8604 // Possible null reference argument.
 builder.Services.AddDbContext<AppDbContext>(opt =>
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("TestDB")));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString(ConnectionName)));
+#pragma warning restore CS8604 // Possible null reference argument.
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -44,16 +62,16 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger(options =>
-{
-    options.SerializeAsV2 = true;
-});
+    {
+        options.SerializeAsV2 = true;
+    });
 
     app.UseSwaggerUI(options =>
-{
-    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-    options.DefaultModelsExpandDepth(-1);
-    options.RoutePrefix = "swagger";
-});
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+        options.DefaultModelsExpandDepth(-1);
+        options.RoutePrefix = "swagger";
+    });
 }
 
 app.UseCors("AllowAll");

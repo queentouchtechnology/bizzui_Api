@@ -86,3 +86,8 @@ Build started...
 Build succeeded.
 Done. To undo this action, use 'ef migrations remove'
 c:\QT\bizzui_Api\Bizzui.Api>dotnet ef database update
+
+ref: Cors, middleware, static files
+https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0
+
+ref: command dotnet [run, build, clean]

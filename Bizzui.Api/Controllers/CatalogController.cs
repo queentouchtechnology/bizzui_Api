@@ -23,6 +23,15 @@ namespace Bizzui.Api.Controllers
             return await _context.Catalogs.ToListAsync();
         }
 
+        // GET: api/Catalog/sql
+        [HttpGet("sql")]
+        public async Task<ActionResult<IEnumerable<Catalog>>> ExecuteSqlQuery()
+        {
+            var Sql = "SELECT * FROM Catalogs";
+            var Catalogs = await _context.Catalogs.FromSqlRaw(Sql).ToListAsync();
+            return Ok(Catalogs);
+        }
+
         // GET: api/Catalog/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Catalog>> GetCatalog(long id)
