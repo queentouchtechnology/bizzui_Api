@@ -18,78 +18,104 @@ namespace Bizzui.Api.Controllers
 
         // GET: api/Catalog
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<Catalog>>> GetCatalogs()
         {
-            return await _context.Catalogs.ToListAsync();
+            var catalogs = await _context.Catalogs.ToListAsync();
+            return Ok(catalogs);
         }
 
         // GET: api/Catalog/sql
         [HttpGet("sql")]
         public async Task<ActionResult<IEnumerable<Catalog>>> ExecuteSqlQuery()
         {
-            var Sql = "SELECT * FROM Catalogs";
-            var Catalogs = await _context.Catalogs.FromSqlRaw(Sql).ToListAsync();
-            return Ok(Catalogs);
+            var sql = "SELECT * FROM Catalogs";
+            var catalogs = await _context.Catalogs.FromSqlRaw(sql).ToListAsync();
+            return Ok(catalogs);
         }
 
         // GET: api/Catalog/5
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        // [ProducesResponseType(200, Type = typeof(Catalog))]
         public async Task<ActionResult<Catalog>> GetCatalog(long id)
         {
+            if (id == 0) 
+            {
+                return BadRequest();
+            }
             var catalog = await _context.Catalogs.FindAsync(id);
-
             if (catalog == null)
             {
                 return NotFound();
             }
 
-            return catalog;
-        }
-
-        // PUT: api/Catalog/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCatalog(long id, Catalog catalog)
-        {
-            if (id != catalog.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(catalog).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CatalogExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return Ok(catalog);
         }
 
         // POST: api/Catalog
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Catalog>> PostCatalog(Catalog catalog)
-        {
+        [HttpPost("create")]
+        public async Task<ActionResult<Catalog>> CreateCatalog([FromBody]CatalogDTO rqst)
+        {   
+            if (rqst == null) {
+                return BadRequest();
+            }
+            var catalog = new Catalog(){
+                Id = 0,
+                Name = rqst.Name,
+                Description = rqst.Description,
+                Platform = rqst.Platform,
+                Type = rqst.Type,
+                Price = rqst.Price, 
+                ValidityDays = rqst.ValidityDays,
+                DueDays = rqst.DueDays,
+                Active = true,
+            };
             _context.Catalogs.Add(catalog);
             await _context.SaveChangesAsync();
+            return Ok(catalog);
+        }
 
-            return CreatedAtAction("GetCatalog", new { id = catalog.Id }, catalog);
+        // PUT: api/Catalog/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost("{id}/update")]
+        public async Task<ActionResult<Catalog>> UpdateCatalog(long id, [FromBody]CatalogDTO rqst)
+        {
+            if (id <= 0)
+            {
+                return BadRequest();
+            }
+            var catalog = await _context.Catalogs.FindAsync(id);
+            if (catalog == null) {
+                return BadRequest();
+            }
+            
+            catalog.Name = rqst.Name;
+            catalog.Description = rqst.Description;
+            catalog.Platform = rqst.Platform;
+            catalog.Type = rqst.Type;
+            catalog.Price = rqst.Price;
+            catalog.ValidityDays = rqst.ValidityDays;
+            catalog.DueDays = rqst.DueDays;
+            catalog.UpdatedAt = DateTime.Now;
+            
+            try
+            {
+                await _context.SaveChangesAsync();
+                return Ok(catalog);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: {0}",e.ToString());
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
         // DELETE: api/Catalog/5
-        [HttpDelete("{id}")]
+        [HttpPost("{id}/delete")]
         public async Task<IActionResult> DeleteCatalog(long id)
         {
             var catalog = await _context.Catalogs.FindAsync(id);
@@ -102,11 +128,6 @@ namespace Bizzui.Api.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
-        }
-
-        private bool CatalogExists(long id)
-        {
-            return _context.Catalogs.Any(e => e.Id == id);
         }
     }
 }
