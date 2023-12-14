@@ -30,7 +30,7 @@ open in chrome
 https://localhost:7199/index.html 
 
 c:\QT\bizzui_Api>dotnet run --project Bizzui.Api
-c:\QT\bizzui_Api>dotnet run --project Bizzui.Api --launch-profile http
+c:\QT\bizzui_Api>dotnet watch run --project Bizzui.Api --launch-profile http
 or go to project folder and run
 c:\QT\bizzui_Api\Bizzui.Api>dotnet build
 c:\QT\bizzui_Api\Bizzui.Api>dotnet run
