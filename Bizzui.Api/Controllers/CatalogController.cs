@@ -58,7 +58,7 @@ namespace Bizzui.Api.Controllers
         // POST: api/Catalog
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost("create")]
-        public async Task<ActionResult<Catalog>> CreateCatalog([FromBody]CatalogDTO rqst)
+        public async Task<ActionResult<Catalog>> CreateCatalog([FromBody]CatalogDto rqst)
         {   
             if (rqst == null) {
                 return BadRequest();
@@ -82,7 +82,7 @@ namespace Bizzui.Api.Controllers
         // PUT: api/Catalog/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost("{id}/update")]
-        public async Task<ActionResult<Catalog>> UpdateCatalog(long id, [FromBody]CatalogDTO rqst)
+        public async Task<ActionResult<Catalog>> UpdateCatalog(long id, [FromBody]CatalogDto rqst)
         {
             if (id <= 0)
             {

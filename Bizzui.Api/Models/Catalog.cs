@@ -20,3 +20,14 @@ public class Catalog
     public DateTime CreatedAt {get;set;} = DateTime.Now;
     public DateTime UpdatedAt {get;set;} = DateTime.Now;
 }
+
+public class CatalogDto
+{
+    public required string Name { get; set; } = "";
+    public string? Description { get; set; } = "";
+    public required string Platform { get; set; } = "";
+    public required string Type { get; set; } = "";
+    public required int Price {get;set;} = 0;
+    public required int ValidityDays {get;set;} = 0;
+    public required int DueDays {get;set;} = 0;
+}

@@ -1,5 +1,6 @@
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
+using dotenv.net;
 using BizzuiApi.Models;
 using BizzuiApi.Data;
 
@@ -12,6 +13,12 @@ builder.Services.AddCors(options =>
     });
 // Add services to the container.
 builder.Services.AddControllers();
+// var constr = EnvReader.GetStringValue("PROD_DB");
+// Console.WriteLine("constr: {0}", constr);
+
+var envVars = DotEnv.Read();
+Console.WriteLine(envVars["PROD_DB"]);
+
 var ConnectionName = "TestDB";
 Console.WriteLine("Environment: {0}", builder.Environment.EnvironmentName);
 ConnectionName = builder.Configuration.GetSection("ConnectionName").Value;

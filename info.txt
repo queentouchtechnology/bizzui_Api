@@ -84,10 +84,19 @@ c:\QT\bizzui_Api\Bizzui.Api>dotnet aspnet-codegenerator controller -name Catalog
 c:\QT\bizzui_Api\Bizzui.Api>dotnet ef migrations add "AddCatalogTable"
 Build started...
 Build succeeded.
-Done. To undo this action, use 'ef migrations remove'
+Done. 
+To undo this action: 'dotnet ef migrations remove'
+To apply specific migration: 'dotnet ef database update AddCatalogTable'
 c:\QT\bizzui_Api\Bizzui.Api>dotnet ef database update
 
 ref: Cors, middleware, static files
 https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0
 
 ref: command dotnet [run, build, clean]
+
+DOTENV
+dotnet add package dotenv.net
+
+Migrations:
+AddCatalogTable
+AddUserTable

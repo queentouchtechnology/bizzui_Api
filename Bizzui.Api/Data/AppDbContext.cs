@@ -9,4 +9,6 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     // : base(options)
     // {}
     public DbSet<Catalog> Catalogs { get; set; } //= null!;
+    public DbSet<User> Users { get; set; } //= null!;
+    public DbSet<Customer> Customers { get; set; } //= null!;
 }
