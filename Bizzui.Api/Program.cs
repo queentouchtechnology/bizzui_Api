@@ -13,30 +13,22 @@ builder.Services.AddCors(options =>
     });
 // Add services to the container.
 builder.Services.AddControllers();
-// var constr = EnvReader.GetStringValue("PROD_DB");
-// Console.WriteLine("constr: {0}", constr);
 
 var envVars = DotEnv.Read();
-Console.WriteLine(envVars["PROD_DB"]);
-
-var ConnectionName = "TestDB";
-Console.WriteLine("Environment: {0}", builder.Environment.EnvironmentName);
-ConnectionName = builder.Configuration.GetSection("ConnectionName").Value;
-Console.WriteLine("Database: "+ ConnectionName);
-/*
+var ConnectionString = string.Empty;
 if (builder.Environment.IsDevelopment()) {
-    ConnectionName = builder.Configuration.GetSection("ConnectionName").Value;
-    Console.WriteLine("Env: Development");
-    Console.WriteLine("Con: "+ ConnectionName);
+    Console.WriteLine("DevDB: {0}",envVars["DEV_DB"]);
+    ConnectionString = envVars["DEV_DB"];
 } else if (builder.Environment.IsProduction()) {
-    ConnectionName = builder.Configuration.GetSection("ConnectionName").Value;
-    Console.WriteLine("Env: Production");
-    Console.WriteLine("Con: {0}", ConnectionName);
+    Console.WriteLine("ProdDB: {0}",envVars["PROD_DB"]);
+    ConnectionString = envVars["PROD_DB"];
 }
-*/
+
 #pragma warning disable CS8604 // Possible null reference argument.
+// builder.Services.AddDbContext<AppDbContext>(opt =>
+//     opt.UseSqlServer(builder.Configuration.GetConnectionString(ConnectionString)));
 builder.Services.AddDbContext<AppDbContext>(opt =>
-    opt.UseSqlServer(builder.Configuration.GetConnectionString(ConnectionName)));
+    opt.UseSqlServer(ConnectionString));
 #pragma warning restore CS8604 // Possible null reference argument.
 
 
