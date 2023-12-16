@@ -1,6 +1,7 @@
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
-using dotenv.net;
+// using dotenv.net;
+using DotNetEnv;
 using BizzuiApi.Models;
 using BizzuiApi.Data;
 
@@ -14,14 +15,14 @@ builder.Services.AddCors(options =>
 // Add services to the container.
 builder.Services.AddControllers();
 
-var envVars = DotEnv.Read();
+Env.Load();
 var ConnectionString = string.Empty;
 if (builder.Environment.IsDevelopment()) {
-    Console.WriteLine("DevDB: {0}",envVars["DEV_DB"]);
-    ConnectionString = envVars["DEV_DB"];
+    ConnectionString = Env.GetString("DEV_DB");
+    Console.WriteLine("DevDB: {0}",ConnectionString);
 } else if (builder.Environment.IsProduction()) {
-    Console.WriteLine("ProdDB: {0}",envVars["PROD_DB"]);
-    ConnectionString = envVars["PROD_DB"];
+    ConnectionString = Env.GetString("PROD_DB");
+    Console.WriteLine("ProdDB: {0}",ConnectionString);
 }
 
 #pragma warning disable CS8604 // Possible null reference argument.
