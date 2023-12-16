@@ -63,6 +63,9 @@ namespace Bizzui.Api.Controllers
             if (rqst == null) {
                 return BadRequest();
             }
+            if (!(rqst.Type == "Service" || rqst.Type == "Product")) {
+                return BadRequest("Invalid Type");
+            }
             var catalog = new Catalog(){
                 Id = 0,
                 Name = rqst.Name,

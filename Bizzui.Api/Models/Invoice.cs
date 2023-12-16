@@ -23,3 +23,21 @@ public class Invoice
     public DateTime CreatedAt {get;set;} = DateTime.Now;
     public DateTime UpdatedAt {get;set;} = DateTime.Now;
 }
+
+public class CreateInvoiceRqstMdl
+{
+    [Required(ErrorMessage = "Customer is required")]
+    public required long CustomerId {get;set;}
+    [Required(ErrorMessage = "Catalog is required")]
+    public required long CatalogId { get; set; }
+
+    [Required(ErrorMessage = "Domain is required")]
+    public required string Domain { get; set; }
+}
+public class UpdateInvoicePaymentRqstMdl
+{
+    [Required(ErrorMessage = "Status is required")]
+    public required string Status {get;set;}
+    [Required(ErrorMessage = "Payment Type is required")]
+    public required string PaymentType { get; set; }
+}

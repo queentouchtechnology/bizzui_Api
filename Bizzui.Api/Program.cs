@@ -59,8 +59,8 @@ builder.Services.AddSwaggerGen(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+// if (app.Environment.IsDevelopment())
+// {
     app.UseSwagger(options =>
     {
         options.SerializeAsV2 = true;
@@ -72,7 +72,7 @@ if (app.Environment.IsDevelopment())
         options.DefaultModelsExpandDepth(-1);
         options.RoutePrefix = "swagger";
     });
-}
+// }
 
 app.UseCors("AllowAll");
 app.UseHttpsRedirection();
