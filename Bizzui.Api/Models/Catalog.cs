@@ -21,7 +21,7 @@ public class Catalog
     public DateTime UpdatedAt {get;set;} = DateTime.Now;
 }
 
-public class CatalogDto
+public class SaveCatalogReqMdl
 {
     public required string Name { get; set; } = "";
     public string? Description { get; set; } = "";

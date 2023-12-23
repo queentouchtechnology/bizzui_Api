@@ -58,23 +58,23 @@ namespace Bizzui.Api.Controllers
         // POST: api/Catalog
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost("create")]
-        public async Task<ActionResult<Catalog>> CreateCatalog([FromBody]CatalogDto rqst)
+        public async Task<ActionResult<Catalog>> CreateCatalog([FromBody]SaveCatalogReqMdl req)
         {   
-            if (rqst == null) {
+            if (req == null) {
                 return BadRequest();
             }
-            if (!(rqst.Type == "Service" || rqst.Type == "Product")) {
+            if (!(req.Type == "Service" || req.Type == "Product")) {
                 return BadRequest("Invalid Type");
             }
             var catalog = new Catalog(){
                 Id = 0,
-                Name = rqst.Name,
-                Description = rqst.Description,
-                Platform = rqst.Platform,
-                Type = rqst.Type,
-                Price = rqst.Price, 
-                ValidityDays = rqst.ValidityDays,
-                DueDays = rqst.DueDays,
+                Name = req.Name,
+                Description = req.Description,
+                Platform = req.Platform,
+                Type = req.Type,
+                Price = req.Price, 
+                ValidityDays = req.ValidityDays,
+                DueDays = req.DueDays,
                 Active = true,
             };
             _context.Catalogs.Add(catalog);
@@ -85,7 +85,7 @@ namespace Bizzui.Api.Controllers
         // PUT: api/Catalog/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost("{id}/update")]
-        public async Task<ActionResult<Catalog>> UpdateCatalog(long id, [FromBody]CatalogDto rqst)
+        public async Task<ActionResult<Catalog>> UpdateCatalog(long id, [FromBody]SaveCatalogReqMdl req)
         {
             if (id <= 0)
             {
@@ -96,13 +96,13 @@ namespace Bizzui.Api.Controllers
                 return BadRequest();
             }
             
-            catalog.Name = rqst.Name;
-            catalog.Description = rqst.Description;
-            catalog.Platform = rqst.Platform;
-            catalog.Type = rqst.Type;
-            catalog.Price = rqst.Price;
-            catalog.ValidityDays = rqst.ValidityDays;
-            catalog.DueDays = rqst.DueDays;
+            catalog.Name = req.Name;
+            catalog.Description = req.Description;
+            catalog.Platform = req.Platform;
+            catalog.Type = req.Type;
+            catalog.Price = req.Price;
+            catalog.ValidityDays = req.ValidityDays;
+            catalog.DueDays = req.DueDays;
             catalog.UpdatedAt = DateTime.Now;
             
             try
